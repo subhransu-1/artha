@@ -6,4 +6,7 @@ jobs:
       - checkout
       # Whatever you want to do
       - run: sudo apt-get update && sudo apt-get install -y cowsay
-      - run: cowsay Continuous Integration Rocks!
+      - run: sudo wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.9/terragrunt_linux_arm64
+      - run: sudo mv terragrunt_linux_arm64 terragrunt
+      - run: sudo chmod u+x terragrunt
+      - run: sudo mv terragrunt /usr/local/bin/terragrunt
