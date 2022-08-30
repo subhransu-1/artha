@@ -1,11 +1,11 @@
 jobs:
   build:
     docker:
-      - image cimg/base:2022.08
+      - image: cimg/base:2022.08
     steps:
-       checkout:
+      - checkout
       # Whatever you want to do
-       - run: sudo wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.9/terragrunt_linux_arm64
-       - run: sudo  mv terragrunt_linux_arm64 terragrunt
-       - run: sudo chmod u+x terragrunt
-       - run: sudo mv terragrunt /usr/local/bin/terragrunt
+      - run: sudo wget https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.9/terragrunt_linux_arm64
+      - run: sudo mv terragrunt_linux_arm64 terragrunt
+      - run: sudo chmod u+x terragrunt
+      - run: sudo mv terragrunt /usr/local/bin/terragrunt
